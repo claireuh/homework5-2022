@@ -1,13 +1,17 @@
+/* animate logo */
 img#logo{
     animation-name: logo;
     animation-duration: 5s;
     width: 475px;
 }
+
+/* logo animation reference */
 @keyframes logo{
     from {width: 25px; opacity: 0;}
     to {width: 475px; opacity: 1;}
 }
 
+/* no logo animation for prefers reduced motion */
 @media screen and (prefers-reduced-motion: reduce){
     img#logo{
         width: 475px;
@@ -15,26 +19,31 @@ img#logo{
     }
 }
 
+/* body styling*/
 body{
     font-family: "Poppins", serif;
     background: url("../images/concrete_seamless.png"), #f1f1f1;
 }
 
+/* header styling */
 header{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* nav links styling */
 .nav_links{
     display: flex;
     flex-direction: column;
 }
 
+/* visited nav links styling*/
 .nav_item a:visited{
     color: blue;
 }
 
+/* header of card class styling */
 div.card > header{
     background-color: #288088;
     border: solid 2px #45ADAD;
@@ -44,7 +53,7 @@ div.card > header{
     border-top-right-radius: 50px;
 }
 
-
+/* card class styling */
 .card{
     display: flex;
     flex-direction: column;
@@ -54,6 +63,7 @@ div.card > header{
     border-top-right-radius: 50px;
 }
 
+/* pricing class styling */
 .pricing{
     display: flex;
     flex-direction: row;
@@ -62,12 +72,14 @@ div.card > header{
     align-items: center;
 }
 
+/* gallery images styling */
 .gallery img{
     border: solid 10px #50c7c7;
     margin: 10px;
     width: 300px;
 }
 
+/* gallery class styling */
 .gallery{
     display: flex;
     flex-direction: row;
@@ -75,51 +87,65 @@ div.card > header{
     justify-content: center;
 }
 
+/* styling for screen size over 900px */
 @media screen and (min-width: 900px){
+
+    /* header and nav links styling */
     header, .nav_links{
         flex-direction: row;
         justify-content: space-between;
     }
 
+    /* card class styling */
     .card {
         flex-basis: 275px;
     }
 
+    /* first header stays at top */
     body > header {
         position: sticky;
         top: 0;
     }
 }
 
+/* print mode */
 @media print{
+
+    /* body styling */
     body{
         font-family: Arial, Helvetica;
         background-image: none;
     }
 
+    /* spreading out nav */
     nav{
         width: 100%;
     }
 
+    /* nav links styling */
     .nav_links{
         flex-direction: row;
         justify-content: space-around;
     }
 
+    /* line up the bottoms of pricing class */
     .pricing{
         align-items: flex-end;
         flex-wrap: nowrap;
     }
 
+    /* card styling */
     .card{
         border: 2px solid #45addd;
         flex-basis: 325px;
     }
 
+    /* nothing in gallery shows */
     #gallery, .gallery > *{
         display: none;
     }
 
+    /* thumbs up emoji in the cards */
     .card li:nth-child(2)::after{
         content: "\01F44D";
     }
